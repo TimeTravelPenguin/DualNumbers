@@ -60,19 +60,19 @@ instance Ring.C a => Monoid.C (Dual a) where
   idt = Dual 1 0
   (<*>) = addD
 
-instance (Additive.C a, Ring.C a) => Additive.C (Dual a) where
-  zero = Dual zero zero
-  (+) = addD
-  negate = negateD
-
-instance (Ring.C a) => Ring.C (Dual a) where
-  (*) = mulD
-  one = idt
+instance (Algebraic.C a, ToRational.C a, Eq a) => Algebraic.C (Dual a) where
+  root = rootD
 
 instance (Ring.C a, Field.C a) => Field.C (Dual a) where
   (/) (Dual a b) (Dual c d) = Dual (a / c) ((b * c - a * d) / c ^ 2)
   (/) x Imaginary = x / Dual 0 1
   (/) Imaginary y = Dual 0 1 / y
 
-instance (Algebraic.C a, ToRational.C a, Eq a) => Algebraic.C (Dual a) where
-  root = rootD
+instance (Ring.C a) => Ring.C (Dual a) where
+  (*) = mulD
+  one = idt
+
+instance (Additive.C a, Ring.C a) => Additive.C (Dual a) where
+  zero = Dual zero zero
+  (+) = addD
+  negate = negateD
