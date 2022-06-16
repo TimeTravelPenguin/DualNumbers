@@ -2,6 +2,7 @@
 
 module Main where
 
+import qualified Algebra.Additive as Additive
 import Algebra.Algebraic
 import qualified Algebra.Differential as Differential
 import Algebra.OccasionallyScalar (C (fromScalar))
@@ -34,6 +35,7 @@ main = do
   let z = mkDualF 1 1
   print z
   let dx = derivateAt fx 1 :: Dual Double
-  print dx
+  print $ getImaginary dx
   print $ f'x (1 :: Double)
+
   putStrLn "Done"
