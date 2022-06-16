@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Dual
+      ErrorTypes
   other-modules:
       Paths_DualNumbers
   hs-source-dirs:
@@ -50,8 +51,10 @@ executable DualNumbers-exe
 
 test-suite DualNumbers-test
   type: exitcode-stdio-1.0
-  main-is: Spec.hs
+  main-is: Test.hs
   other-modules:
+      AdditiveTests
+      TestInstances
       Paths_DualNumbers
   hs-source-dirs:
       test
@@ -61,4 +64,6 @@ test-suite DualNumbers-test
     , QuickCheck
     , base >=4.7 && <5
     , numeric-prelude
+    , tasty
+    , tasty-quickcheck
   default-language: Haskell2010
