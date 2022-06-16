@@ -4,6 +4,8 @@ module Main where
 
 import Algebra.Algebraic
 import qualified Algebra.Differential as Differential
+import Algebra.OccasionallyScalar (C (fromScalar))
+import qualified Algebra.OccasionallyScalar as OccasionallyScalar
 import qualified Algebra.Ring as Ring
 import qualified Algebra.Transcendental as Transcendental
 import Dual
@@ -17,12 +19,11 @@ mkDual = Dual
 mkDualF :: Double -> Double -> Dual Double
 mkDualF = Dual
 
-getDualComp :: Ring.C a => Dual a -> a
-getDualComp (Dual _ b) = b
+getImaginary :: Ring.C a => Dual a -> a
+getImaginary (Dual _ b) = b
 
-derivateAt f x0 =
-  let d = Dual x0 1
-   in getDualComp $ f d
+derivateAt :: Ring.C a => (Dual a -> t) -> a -> t
+derivateAt f x = f (Dual x 1)
 
 fx x = sin x ^ 2
 
@@ -32,6 +33,7 @@ main :: IO ()
 main = do
   let z = mkDualF 1 1
   print z
-  print $ derivateAt fx (1 :: Double)
-  print $ getDualComp $ f'x z
+  let dx = derivateAt fx 1 :: Dual Double
+  print dx
+  print $ f'x (1 :: Double)
   putStrLn "Done"
