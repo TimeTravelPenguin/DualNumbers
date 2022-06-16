@@ -2,13 +2,14 @@
 
 module Main where
 
+import Algebra.Algebraic
 import qualified Algebra.Differential as Differential
 import qualified Algebra.Ring as Ring
-import Algebra.Algebraic
+import qualified Algebra.Transcendental as Transcendental
 import Dual
+import MathObj.PowerSeries as PS
 import NumericPrelude
 import Prelude (IO, print, putStrLn, ($))
-import MathObj.PowerSeries as PS
 
 mkDual :: Integer -> Integer -> Dual Integer
 mkDual = Dual
@@ -16,14 +17,21 @@ mkDual = Dual
 mkDualF :: Double -> Double -> Dual Double
 mkDualF = Dual
 
-fx :: Ring.C a => a -> a
-fx x = x ^ 2
+getDualComp :: Ring.C a => Dual a -> a
+getDualComp (Dual _ b) = b
+
+derivateAt f x0 =
+  let d = Dual x0 1
+   in getDualComp $ f d
+
+fx x = sin x ^ 2
+
+f'x x = 2 * sin x * cos x
 
 main :: IO ()
 main = do
-  let x = mkDualF 1 2
-  let y = mkDualF (-1) 3
-  let z = rootD 2 x
+  let z = mkDualF 1 1
   print z
-  print $ fx z
+  print $ derivateAt fx (1 :: Double)
+  print $ getDualComp $ f'x z
   putStrLn "Done"
