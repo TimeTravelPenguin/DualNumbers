@@ -66,10 +66,10 @@ instance (Additive.C a, Ring.C a) => Additive.C (Dual a) where
   (+) (Dual x y) (Dual p q) = Dual (x + p) (y + q)
   negate (Dual x y) = Dual (negate x) (negate y)
 
-instance (Algebraic.C a, ToRational.C a, Eq a) => Algebraic.C (Dual a) where
+instance (Algebraic.C a, ToRational.C a) => Algebraic.C (Dual a) where
   root n (Dual x y) =
     let n' = 1 / fromInteger n
-     in if x == zero
+     in if isZero x
           then raiseError "Dual.root" RootError
           else Dual (Algebraic.power n' x) (n' * y * Algebraic.power (n' - 1) x)
 
