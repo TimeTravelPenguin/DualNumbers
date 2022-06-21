@@ -89,21 +89,21 @@ instance (Ring.C a, Eq a, ZeroTestable.C a) => OccasionallyScalar.C a (Dual a) w
   fromScalar a = Dual a 0
 
 instance (Algebraic.C a, ToRational.C a, Transcendental.C a) => Transcendental.C (Dual a) where
-  -- TODO
+  -- TODO:
+  --  1. Compare sinh, cosh, tanh with exponential forms (Analysis of Dual Functions, section 3.3)
   pi = Dual pi 0
-  exp (Dual x y) = undefined
-  log (Dual x y) = undefined
-  logBase (Dual x y) (Dual u v) = undefined
-  (**) (Dual x y) (Dual u v) = undefined
+  exp (Dual x y) = Dual (exp x) (y * exp x)
+  log (Dual x y) = Dual (log x) (y / x) -- Do we need to define logBase?
+  (**) (Dual x y) (Dual u v) = undefined -- TODO: How do we define this?
   sin (Dual x y) = Dual (sin x) (y * cos x)
   cos (Dual x y) = Dual (cos x) (-y * sin x)
-  tan (Dual x y) = undefined
+  tan z = sin z / cos z -- Compare: tan (Dual x y) = Dual (tan x) (-y / (cos x)^2)
   asin (Dual x y) = undefined
   acos (Dual x y) = undefined
   atan (Dual x y) = undefined
-  sinh (Dual x y) = undefined
-  cosh (Dual x y) = undefined
-  tanh (Dual x y) = undefined
+  sinh (Dual x y) = Dual (sinh x) (y * cosh x)
+  cosh (Dual x y) = Dual (cosh x) (y * sinh x)
+  tanh z = sinh z / cosh z
   asinh (Dual x y) = undefined
   acosh (Dual x y) = undefined
   atanh (Dual x y) = undefined
