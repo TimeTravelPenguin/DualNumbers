@@ -1,7 +1,6 @@
 # DualNumbers
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/TimeTravelPenguin/DualNumbers/Haskell%20CI?job=Build)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/TimeTravelPenguin/DualNumbers/Haskell%20CI?job=Tests)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/TimeTravelPenguin/DualNumbers/Haskell%20CI?label=Build%20%26%20Test)
 
 A simple toy implementation of the hypercomplex number system called the [Dual numbers](https://en.wikipedia.org/wiki/Dual_number).
 
