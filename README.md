@@ -32,5 +32,5 @@ Resources:
   [DOI:10.13140/2.1.1006.4006](https://www.arctbds.com/volume4/arctbds_submission_28.pdf)
 
 - Behr, Nicolas, Giuseppe Dattoli, Ambra Lattanzi, and Silvia Licciardi,\
-  "Dual Numbers and Operational Umbral Methods" Axioms 8, no. 3: 77 (2019)\
+  Dual Numbers and Operational Umbral Methods, Axioms 8, no. 3: 77 (2019)\
   [DOI:10.3390/axioms8030077](https://www.mdpi.com/2075-1680/8/3/77)
