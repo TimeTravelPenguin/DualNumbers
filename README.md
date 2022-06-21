@@ -1,5 +1,8 @@
 # DualNumbers
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/TimeTravelPenguin/DualNumbers/Haskell%20CI?job=Build)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/TimeTravelPenguin/DualNumbers/Haskell%20CI?job=Tests)
+
 A simple toy implementation of the hypercomplex number system called the [Dual numbers](https://en.wikipedia.org/wiki/Dual_number).
 
 Dual numbers are of the form $z = a + b\varepsilon$ where $a,b\in\mathbb{R}$, where $\varepsilon^2=0$.
