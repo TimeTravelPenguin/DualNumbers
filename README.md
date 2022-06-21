@@ -23,3 +23,14 @@ $$
 One property of interest is [_automatic differentiation_](https://en.wikipedia.org/wiki/Automatic_differentiation#Automatic_differentiation_using_dual_numbers). For any **analytic** function $f:\mathbb{R}\mapsto\mathbb{R}$, it can be shown that the domain can be extended to include the Dual numbers in such a way that, for $z\in\mathbb{D}$, where $x,y\in\mathbb{R}$, $z=(x + y\varepsilon)$:
 $$ f(z) = f(a) + bf'(a)\varepsilon $$
 This is done by manipulating the function's [Taylor Series](https://en.wikipedia.org/wiki/Taylor_series), making use of the fact that, $\forall n\geq 2,\,\varepsilon^n=0$, which gives the prior result.
+
+Resources:
+
+- F. Messelmi,\
+  Analysis of Dual Functions,\
+  Annual Review of Chaos Theory, Bifurcations and Dynamical Systems Vol. 4, (2013) 37-54,\
+  [DOI:10.13140/2.1.1006.4006](https://www.arctbds.com/volume4/arctbds_submission_28.pdf)
+
+- Behr, Nicolas, Giuseppe Dattoli, Ambra Lattanzi, and Silvia Licciardi,\
+  "Dual Numbers and Operational Umbral Methods" Axioms 8, no. 3: 77 (2019)\
+  [DOI:10.3390/axioms8030077](https://www.mdpi.com/2075-1680/8/3/77)
