@@ -26,11 +26,19 @@ This is done by manipulating the function's [Taylor Series](https://en.wikipedia
 
 Resources:
 
+<<<<<<< HEAD
 - F. Messelmi,\
+=======
+- *F. Messelmi,\
+>>>>>>> 5a9b5a56d14200a8133b6c8fb09181d8b7fbd502
   Analysis of Dual Functions,\
   Annual Review of Chaos Theory, Bifurcations and Dynamical Systems Vol. 4, (2013) 37-54,\
   [DOI:10.13140/2.1.1006.4006](https://www.arctbds.com/volume4/arctbds_submission_28.pdf)
 
+<<<<<<< HEAD
 - Behr, Nicolas, Giuseppe Dattoli, Ambra Lattanzi, and Silvia Licciardi,\
+=======
+- *Behr, Nicolas, Giuseppe Dattoli, Ambra Lattanzi, and Silvia Licciardi,\
+>>>>>>> 5a9b5a56d14200a8133b6c8fb09181d8b7fbd502
   "Dual Numbers and Operational Umbral Methods" Axioms 8, no. 3: 77 (2019)\
   [DOI:10.3390/axioms8030077](https://www.mdpi.com/2075-1680/8/3/77)
