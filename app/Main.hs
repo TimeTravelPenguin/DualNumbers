@@ -32,9 +32,10 @@ f'x x = 2 * sin x * cos x
 
 main :: IO ()
 main = do
-  let x = mkDualF 1 1
-  let y = mkDualF 2 3
-
-  print $ x * y
+  let z = mkDualF 1 1
+  print z
+  let dx = derivateAt fx 1 :: Dual Double
+  print $ getImaginary dx
+  print $ f'x (1 :: Double)
 
   putStrLn "Done"
