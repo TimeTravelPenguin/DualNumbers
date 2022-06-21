@@ -38,7 +38,7 @@ prop_additive_identity_double :: Dual Double -> Bool
 prop_additive_identity_double x = propIdentity (approxRat x)
 
 prop_additive_inverse_double :: Dual Double -> Bool
-prop_additive_inverse_double x = propInverse (approxRat x)
+prop_additive_inverse_double x = False --propInverse (approxRat x)
 
 --return []
 --runTests = $quickCheckAll
