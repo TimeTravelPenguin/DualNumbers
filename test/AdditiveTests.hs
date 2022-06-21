@@ -4,7 +4,8 @@ module AdditiveTests (tests) where
 
 import Algebra.Additive (propAssociative, propCommutative, propIdentity, propInverse)
 import Dual (Dual (Dual))
-import NumericPrelude (Bool, Double, Integer, Monad (return))
+import Helpers (approxRat)
+import NumericPrelude
 import Test.QuickCheck (Arbitrary (arbitrary), quickCheckAll)
 import Test.Tasty (TestTree, testGroup)
 import Test.Tasty.QuickCheck as QC (testProperty)
@@ -28,16 +29,16 @@ prop_additive_inverse_integer = propInverse
 {- Additive Double Properties -}
 
 prop_additive_associativity_double :: Dual Double -> Dual Double -> Dual Double -> Bool
-prop_additive_associativity_double = propAssociative
+prop_additive_associativity_double x y z = propAssociative (approxRat x) (approxRat y) (approxRat z)
 
 prop_additive_commutative_double :: Dual Double -> Dual Double -> Bool
-prop_additive_commutative_double = propCommutative
+prop_additive_commutative_double x y = propCommutative (approxRat x) (approxRat y)
 
 prop_additive_identity_double :: Dual Double -> Bool
-prop_additive_identity_double = propIdentity
+prop_additive_identity_double x = propIdentity (approxRat x)
 
 prop_additive_inverse_double :: Dual Double -> Bool
-prop_additive_inverse_double = propInverse
+prop_additive_inverse_double x = propInverse (approxRat x)
 
 --return []
 --runTests = $quickCheckAll
