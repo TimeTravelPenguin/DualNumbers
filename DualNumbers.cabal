@@ -54,6 +54,7 @@ test-suite DualNumbers-test
   main-is: Test.hs
   other-modules:
       AdditiveTests
+      Helpers
       TestInstances
       Paths_DualNumbers
   hs-source-dirs:
