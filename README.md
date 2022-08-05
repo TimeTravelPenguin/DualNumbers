@@ -9,22 +9,28 @@ Dual numbers are of the form $z = a + b\varepsilon$ where $a,b\in\mathbb{R}$, wh
 Whereas for standard real $(\mathbb{R})$ algebra:
 
 $$
-  (a + b)(x + y) = ax +ay + bx + by\\
-  (a + b)^2 = a^2 + 2ab + b^2
+\begin{align*}
+  (a + b)(x + y) &= ax +ay + bx + by\\
+  (a + b)^2 &= a^2 + 2ab + b^2
+\end{align*}
 $$
 
 And how in complex $(\mathbb{C})$ domain, where $i^2=-1$:
 
 $$
-  (a + bi)(x + yi) = ax - by + (ay + bx)i\\
-  (a + bi)^2 = a^2 + 2abi - b^2
+\begin{align*}
+  (a + bi)(x + yi) &= ax - by + (ay + bx)i\\
+  (a + bi)^2 &= a^2 + 2abi - b^2
+\end{align*}
 $$
 
 In the Dual $(\mathbb{D})$ number system:
 
 $$
-  (a + b\varepsilon)(x + y\varepsilon) = ax + (ay + bx)\varepsilon\\
-  (a + b\varepsilon)^2 = a^2 + 2ab\varepsilon
+\begin{align*}
+  (a + b\varepsilon)(x + y\varepsilon) &= ax + (ay + bx)\varepsilon\\
+  (a + b\varepsilon)^2 &= a^2 + 2ab\varepsilon
+\end{align*}
 $$
 
 One property of interest is [_automatic differentiation_](https://en.wikipedia.org/wiki/Automatic_differentiation#Automatic_differentiation_using_dual_numbers). For any **analytic** function $f:\mathbb{R}\mapsto\mathbb{R}$, it can be shown that the domain can be extended to include the Dual numbers in such a way that, for $z\in\mathbb{D}$, where $x,y\in\mathbb{R}$, $z=(x + y\varepsilon)$:
