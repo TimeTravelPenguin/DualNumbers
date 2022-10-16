@@ -39,7 +39,7 @@ $$
   f(z) = f(a) + bf'(a)\varepsilon
 $$
 
-This is done by manipulating the function's [Taylor Series](https://en.wikipedia.org/wiki/Taylor_series), making use of the fact that, $\forall n\geq 2,\\,\varepsilon^n=0$, which gives the prior result.
+This is done by manipulating the function's [Taylor Series](https://en.wikipedia.org/wiki/Taylor_series), making use of the fact that, $\forall n\geq 2,\,\varepsilon^n=0$, which gives the prior result.
 
 Resources:
 
